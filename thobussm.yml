@@ -1,0 +1,8 @@
+---
+
+- hosts: localhost
+  connection: local
+
+  tasks:
+    - homebrew_tap:
+        name: codekitchen/dinghy

@@ -7,10 +7,7 @@
   homebrew: name={{item}} state=latest
   with_items:
     - wget
-    - pwgen
-    - xmlstarlet
     - htop
-    - watch
     - rsync
 
 - name: install developer cask applications
