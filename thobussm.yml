@@ -6,3 +6,78 @@
   tasks:
     - homebrew_tap:
         name: codekitchen/dinghy
+    - name: install homebrew applications
+      homebrew: name={{item}} state=latest
+      with_items:
+        #- node
+        #- docker
+        #- docker-compose
+        #- docker-machine
+        #- docker-machine-driver-xhyve
+        #- apm-bash-completion
+        - brew-cask-completion
+        #- dinghy
+        #- coreutils
+        #- findutils
+        #- bfg
+        #- drush
+        #- git
+        #- git-extras
+        #- moreutils
+        #- mupen64plus
+        #- nvm
+        #- sqlmap
+        #- wget
+    #- shell: chown root:wheel $(brew --prefix)/opt/docker-machine-driver-xhyve/bin/docker-machine-driver-xhyve
+    #  become: yes
+    #- shell: chmod u+s $(brew --prefix)/opt/docker-machine-driver-xhyve/bin/docker-machine-driver-xhyve
+    #  become: yes
+    - name: install homebrew cask applications
+      homebrew_cask: name={{item}} state=present
+      with_items:
+        # Apps for all
+        - alfred
+        - box-sync
+        - dash
+        - docker
+        #- firefox
+        #- google-chrome
+        - google-hangouts
+        - imagealpha
+        - imageoptim
+        - kitematic
+        - macdown
+        - mamp
+        - master-password
+        - microsoft-lync
+        - phpstorm
+        - postman
+        - sequel-pro
+        - sourcetree
+        - sqlitebrowser
+        - sublime-text
+        - unrarx
+        - wireshark
+        - yed
+        # Quick Look Plugins
+        #- qlcolorcode
+        #- qlstephen
+        #- qlmarkdown
+        #- quicklook-json
+        #- qlprettypatch
+        #- quicklook-csv
+        #- betterzipql
+        - qlimagesize
+        #- webpquicklook
+        - suspicious-package
+        # Personal apps
+        #- disk-inventory-x
+        #- owncloud
+        #- shuttle
+        #- sixtyforce
+        #- skype
+        #- spectacle
+        #- steam
+        #- vox
+        #- vox-preferences-pane
+        #- youtube-to-mp3
