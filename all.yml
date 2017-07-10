@@ -25,8 +25,7 @@
     - name: install homebrew cask applications
       homebrew_cask: name={{item}} state=present
       with_items:
-        # Personal apps
-        #- disk-inventory-x
+        - disk-inventory-x
         - google-hangouts
         - keepassx
         - master-password
