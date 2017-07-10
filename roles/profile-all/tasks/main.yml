@@ -3,6 +3,22 @@
 - name: install cask applications for all users
   homebrew_cask: name={{item}} state=present
   with_items:
-    #- google-drive
+    - alfred
+    - box-sync
+    - flux
+    - master-password
+    - microsoft-lync
+    - unrarx
     - vlc
-
+    - yed
+    # Quick Look Plugins
+    #- qlcolorcode
+    #- qlstephen
+    #- qlmarkdown
+    #- quicklook-json
+    #- qlprettypatch
+    #- quicklook-csv
+    #- betterzipql
+    - qlimagesize
+    #- webpquicklook
+    - suspicious-package

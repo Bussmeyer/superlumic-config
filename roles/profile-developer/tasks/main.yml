@@ -1,16 +1,38 @@
 ---
 
-- name: tap caskroom/versions
-  homebrew_tap: tap=caskroom/versions state=present
+- name: install taps
+  homebrew_tap: tap={{item}} state=present
+  with_items:
+    - caskroom/versions
+    - codekitchen/dinghy
 
 - name: install developer brew applications
   homebrew: name={{item}} state=latest
   with_items:
-    - wget
+    - coreutils
+    - findutils
     - htop
+    - moreutils
+    - nvm
     - rsync
+    - sqlmap
+    - wget
 
-- name: install developer cask applications
+- name: install developer homebrew cask applications
   homebrew_cask: name={{item}} state=present
   with_items:
+    - dash
+    - docker
+    - kitematic
+    - imagealpha
+    - imageoptim
+    - macdown
+    - mamp
+    - phpstorm
+    - postman
     - sequel-pro
+    - sourcetree
+    - sqlitebrowser
+    - sublime-text
+    - wireshark
+
