@@ -28,16 +28,18 @@
         # Personal apps
         #- disk-inventory-x
         - google-hangouts
-        #- owncloud
-        #- keepassx
-        #- shuttle
-        #- sixtyforce
-        #- skype
-        #- spectacle
-        #- steam
-        #- vox
-        #- vox-preferences-pane
-        #- youtube-to-mp3
+        - keepassx
+        - master-password
+        - mamp
+        - owncloud
+        - shuttle
+        - sixtyforce
+        - skype
+        - spectacle
+        - steam
+        - vox
+        - vox-preferences-pane
+        - youtube-to-mp3
 
   roles:
     - profile-developer
