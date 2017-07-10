@@ -29,6 +29,7 @@
         #- disk-inventory-x
         - google-hangouts
         #- owncloud
+        #- keepassx
         #- shuttle
         #- sixtyforce
         #- skype
