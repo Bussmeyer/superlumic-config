@@ -1,24 +1,26 @@
 ---
 
-- name: install cask applications for all users
-  homebrew_cask: name={{item}} state=present
+- name: install applications for all users
+  homebrew_cask: name={{item}} state=present install_options=force
   with_items:
     - alfred
     - box-sync
     - flux
-    - master-password
     - microsoft-lync
     - unrarx
     - vlc
     - yed
-    # Quick Look Plugins
-    #- qlcolorcode
-    #- qlstephen
-    #- qlmarkdown
-    #- quicklook-json
-    #- qlprettypatch
-    #- quicklook-csv
-    #- betterzipql
+
+- name: install quick look plugins for all users
+  homebrew_cask: name={{item}} state=present install_options=force
+  with_items:
+    - qlcolorcode
+    - qlstephen
+    - qlmarkdown
+    - quicklook-json
+    - qlprettypatch
+    - quicklook-csv
+    - betterzipql
     - qlimagesize
-    #- webpquicklook
+    - webpquicklook
     - suspicious-package

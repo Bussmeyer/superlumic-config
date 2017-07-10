@@ -6,19 +6,31 @@
     - caskroom/versions
     - codekitchen/dinghy
 
-- name: install developer brew applications
+- name: install cli applications for developers
   homebrew: name={{item}} state=latest
   with_items:
     - coreutils
     - findutils
-    - htop
+    - git
+    - git-extras
+    - htop   
     - moreutils
     - nvm
     - rsync
     - sqlmap
     - wget
-
-- name: install developer homebrew cask applications
+    #- docker
+    #- docker-compose
+    #- docker-machine
+    #- docker-machine-driver-xhyve
+    #- apm-bash-completion
+    #- dinghy
+    #- drush
+#- shell: chown root:wheel $(brew --prefix)/opt/docker-machine-driver-xhyve/bin/docker-machine-driver-xhyve
+#  become: yes
+#- shell: chmod u+s $(brew --prefix)/opt/docker-machine-driver-xhyve/bin/docker-machine-driver-xhyve
+#  become: yes
+- name: install applications for developers
   homebrew_cask: name={{item}} state=present
   with_items:
     - dash
@@ -27,7 +39,6 @@
     - imagealpha
     - imageoptim
     - macdown
-    - mamp
     - phpstorm
     - postman
     - sequel-pro
@@ -36,3 +47,5 @@
     - sublime-text
     - wireshark
 
+- name: create ~/projects directory
+  file: path=~/projects state=directory

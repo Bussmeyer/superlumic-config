@@ -4,25 +4,11 @@
   connection: local
 
   tasks:
-    - name: install brew applications
+    - name: install personal cli applications
       homebrew: name={{item}} state=latest
       with_items:
-        #- node
-        #- docker
-        #- docker-compose
-        #- docker-machine
-        #- docker-machine-driver-xhyve
-        #- apm-bash-completion
-        #- dinghy
-        #- drush
-        - git
-        #- git-extras
-        #- mupen64plus
-    #- shell: chown root:wheel $(brew --prefix)/opt/docker-machine-driver-xhyve/bin/docker-machine-driver-xhyve
-    #  become: yes
-    #- shell: chmod u+s $(brew --prefix)/opt/docker-machine-driver-xhyve/bin/docker-machine-driver-xhyve
-    #  become: yes
-    - name: install homebrew cask applications
+        - mupen64plus
+    - name: install personal applications
       homebrew_cask: name={{item}} state=present
       with_items:
         - disk-inventory-x
